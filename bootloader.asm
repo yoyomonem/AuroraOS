@@ -8,8 +8,7 @@ start:
     mov ss, ax
     mov sp, 0x7C00
 
-    ; Print "Hello, World!"
-    mov si, hello_msg
+    mov si, auroraos_bootloader_msg
 
 print_char:
     lodsb
@@ -24,7 +23,7 @@ done:
     cli
     hlt
 
-hello_msg db 'Hello, World!', 0
+auroraos_bootloader_msg db 'Loading AuroraOS...', 0
 
 TIMES 510 - ($ - $$) db 0
 DW 0xAA55
